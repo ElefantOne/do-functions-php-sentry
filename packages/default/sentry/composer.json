@@ -1,0 +1,13 @@
+{
+    "require": {
+        "php": ">=8.2",
+        "symfony/telegram-notifier": "7.2.0",
+        "symfony/notifier": "7.2.0"
+    },
+    "require-dev": {
+        "sentry/sentry": "4.11.0",
+        "guzzlehttp/guzzle": "7.9.3",
+        "friendsofphp/php-cs-fixer": "^3",
+        "phpstan/phpstan": "^2"
+    }
+}

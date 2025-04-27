@@ -1,0 +1,4 @@
+packages/default/sentry/vendor/
+
+.php-cs-fixer.cache
+.deployed
