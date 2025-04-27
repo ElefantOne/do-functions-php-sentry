@@ -9,7 +9,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./packages/default/notifier
+    working-directory: ./packages/default/sentry
 
 jobs:
   check-code:
