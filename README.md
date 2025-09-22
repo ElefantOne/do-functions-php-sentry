@@ -7,7 +7,7 @@ A serverless function to send notifications to Telegram about errors generated b
 ## Installation
 
 ```shell
-cd packages/default/notifier
+cd packages/default/sentry
 
 composer install
 ```
