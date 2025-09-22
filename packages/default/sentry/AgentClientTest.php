@@ -15,31 +15,28 @@ class AgentClientTest implements HttpClientInterface
     {
         $position = strpos($data, "\n");
 
-        if ($position === false) {
+        if (!$position) {
             return '?';
         }
 
         $headerData = substr($data, 0, $position);
-        $headers = json_decode($headerData, true);
+        /** @var array $decoded */
+        $decoded = json_decode($headerData, true);
 
-        if (!is_array($headers)) {
-            return '?';
-        }
-
-        if (isset($headers['event_id'])) {
-            /** @var string $eventID */
-            $eventID = $headers['event_id'];
-
-            return $eventID;
+        if (isset($decoded['event_id']) && is_string($decoded['event_id'])) {
+            /** @var string $data */
+            $data = $decoded['event_id'];
+            return $data;
         }
 
         return '?';
     }
 
+    #[\Override]
     public function sendRequest(Request $request, Options $options): Response
     {
-        $data = $request->getStringBody();
-        if (empty($data)) {
+        $data = (string) $request->getStringBody();
+        if ($data === '') {
             return new Response(400, [], 'Request body is empty');
         }
 

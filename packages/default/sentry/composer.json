@@ -1,13 +1,17 @@
 {
     "require": {
         "php": ">=8.2",
-        "symfony/telegram-notifier": "7.2.0",
-        "symfony/notifier": "7.2.0"
+        "symfony/telegram-notifier": "7.3.*",
+        "symfony/notifier": "7.3.*"
     },
     "require-dev": {
-        "sentry/sentry": "4.11.0",
-        "guzzlehttp/guzzle": "7.9.3",
-        "friendsofphp/php-cs-fixer": "^3",
-        "phpstan/phpstan": "^2"
+        "sentry/sentry": "*",
+        "guzzlehttp/guzzle": "*",
+        "carthage-software/mago": "1.0.0-beta.18"
+    },
+    "config": {
+        "allow-plugins": {
+            "carthage-software/mago": true
+        }
     }
 }
